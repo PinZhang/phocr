@@ -108,6 +108,18 @@ We conducted comprehensive benchmarks comparing PHOCR with leading OCR solutions
       <td>0.102</td>
       <td>0.0616</td>
     </tr>
+    <tr>
+      <td>PP-OCRv5</td>
+      <td>0.0149</td>
+      <td>0.0226</td>
+      <td>0.0722</td>
+      <td>0.0625</td>
+      <td>0.0490</td>
+      <td>0.1140</td>
+      <td>0.0113</td>
+      <td>0.0519</td>
+      <td>0.0348</td>
+    </tr>
   </tbody>
 </table>
 

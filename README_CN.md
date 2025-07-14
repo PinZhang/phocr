@@ -120,6 +120,18 @@ print(result.to_markdown())
       <td>-</td>
       <td>-</td>
     </tr>
+    <tr>
+      <td>PP-OCRv5</td>
+      <td>0.0149</td>
+      <td>0.0226</td>
+      <td>0.0722</td>
+      <td>0.0625</td>
+      <td>0.0490</td>
+      <td>0.1140</td>
+      <td>0.0113</td>
+      <td>0.0519</td>
+      <td>0.0348</td>
+    </tr>
   </tbody>
 </table>
 
