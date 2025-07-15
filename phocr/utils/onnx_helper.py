@@ -259,7 +259,7 @@ class ORTSeq2Seq(object):
         if not Path(decoder_path).exists():
             raise FileNotFoundError(f"Decoder model not found: {decoder_path}")
 
-        use_io_binding = cfg.get("use_io_binding", False)
+        use_io_binding = cfg.get("use_io_binding", True)
         device = cfg.get("device", 'cuda')
         use_cache = cfg.get("use_cache", False)
 

@@ -1,3 +1,14 @@
+<!-- icon -->
+
+[![stars](https://img.shields.io/github/stars/puhuilab/phocr.svg)](https://github.com/puhuilab/phocr)
+[![forks](https://img.shields.io/github/forks/puhuilab/phocr.svg)](https://github.com/puhuilab/phocr)
+[![open issues](https://img.shields.io/github/issues-raw/puhuilab/phocr)](https://github.com/puhuilab/phocr/issues)
+[![issue resolution](https://img.shields.io/github/issues-closed-raw/puhuilab/phocr)](https://github.com/puhuilab/phocr/issues)
+[![PyPI version](https://img.shields.io/pypi/v/phocr)](https://pypi.org/project/phocr/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/phocr)](https://pypi.org/project/phocr/)
+[![Downloads](https://static.pepy.tech/badge/phocr)](https://pepy.tech/project/phocr)
+[![Downloads](https://static.pepy.tech/badge/phocr/month)](https://pepy.tech/project/phocr)
+
 # PHOCR: High-Performance OCR Toolkit
 
 [English](README.md) | [简体中文](README_CN.md)
