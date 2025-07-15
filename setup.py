@@ -40,7 +40,7 @@ def get_package_data():
 
 setup(
     name="phocr",
-    version="1.0.0",
+    version="1.0.1",
     author="PuHui Lab",
     author_email="contact@puhuilab.com",
     description="High-Performance OCR Toolkit",
