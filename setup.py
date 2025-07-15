@@ -42,7 +42,7 @@ setup(
     name="phocr",
     version="1.0.1",
     author="PuHui Lab",
-    author_email="contact@puhuilab.com",
+    author_email="puhuilab@gmail.com",
     description="High-Performance OCR Toolkit",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
