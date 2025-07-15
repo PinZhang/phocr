@@ -175,6 +175,9 @@ PHOCR uses standardized benchmark datasets for fair comparison:
 - **ko_rec_bench** [Korean text recognition](https://huggingface.co/datasets/puhuilab/ko_rec_bench)
 - **ru_rec_bench** [Russian text recognition](https://huggingface.co/datasets/puhuilab/ru_rec_bench)
 
+Chinese & English mixed text recognition is mainly from [OmniDocBench](https://github.com/opendatalab/OmniDocBench) and [TC-STR](https://github.com/esun-ai/traditional-chinese-text-recogn-dataset).
+Other datasets are collected by our team manually.
+
 ## Further Improvements
 
 - Character error rate (CER), including punctuation, can be further reduced through additional normalization of the training corpus.

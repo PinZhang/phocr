@@ -121,18 +121,6 @@ print(result.to_markdown())
       <td>0.0616</td>
     </tr>
     <tr>
-      <td>PPOCR V5</td>
-      <td>0.011</td>
-      <td>0.060</td>
-      <td>0.032</td>
-      <td>0.061</td>
-      <td>-</td>
-      <td>-</td>
-      <td>-</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-    <tr>
       <td>PP-OCRv5</td>
       <td>0.0149</td>
       <td>0.0226</td>
@@ -186,8 +174,7 @@ PHOCR 使用标准化的基准测试数据集进行公平比较：
 - **ko_rec_bench** [韩文文本识别](https://huggingface.co/datasets/puhuilab/ko_rec_bench)
 - **ru_rec_bench** [俄文文本识别](https://huggingface.co/datasets/puhuilab/ru_rec_bench)
 
-中英文混合文本识别主要来自于[OmniDocBench](https://github.com/opendatalab/OmniDocBench)的随机采样。
-其它数据由我们的团队手工采集完成。
+中英文混合文本识别主要来自于[OmniDocBench](https://github.com/opendatalab/OmniDocBench)和[TC-STR](https://github.com/esun-ai/traditional-chinese-text-recogn-dataset)的随机采样。其它数据由我们的团队手工采集完成。
 
 ## 后续优化方向
 
