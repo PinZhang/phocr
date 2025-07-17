@@ -5,6 +5,8 @@ def zh_en_demo():
     engine = PHOCR(
         params={
             "Rec.lang_type": LangRec.CH,
+            # "Rec.device": "cuda", # if you want to use cuda, you need to set the device to cuda
+            # "EngineConfig.onnxruntime.use_cuda": True, # if you want to use cuda, you need to set the use_cuda to True
         }
     )
     img_urls = {
@@ -22,6 +24,8 @@ def jp_demo():
     engine = PHOCR(
         params={
             "Rec.lang_type": LangRec.JP,
+            # "Rec.device": "cuda",
+            # "EngineConfig.onnxruntime.use_cuda": True,
         }
     )
     img_urls = {
@@ -37,6 +41,8 @@ def ko_demo():
     engine = PHOCR(
         params={
             "Rec.lang_type": LangRec.KO,
+            # "Rec.device": "cuda",
+            # "EngineConfig.onnxruntime.use_cuda": True,
         }
     )
     img_urls = {
@@ -52,6 +58,8 @@ def ru_demo():
     engine = PHOCR(
         params={
             "Rec.lang_type": LangRec.RU,
+            # "Rec.device": "cuda",
+            # "EngineConfig.onnxruntime.use_cuda": True,
         }
     )
     img_urls = {
@@ -70,22 +78,30 @@ def ppocr_demo():
             "Det.ocr_version": OCRVersion.PPOCRV4,
             "Det.model_type": ModelType.MOBILE,
             "Rec.lang_type": LangRec.CH,
+            # "Rec.device": "cuda",
+            # "EngineConfig.onnxruntime.use_cuda": True,
         },
         'c2': {
             "Det.lang_type": LangDet.CH,
             "Det.ocr_version": OCRVersion.PPOCRV4,
             "Det.model_type": ModelType.SERVER,
             "Rec.lang_type": LangRec.CH,
+            # "Rec.device": "cuda",
+            # "EngineConfig.onnxruntime.use_cuda": True,
         },
         'c3': {
             "Det.lang_type": LangDet.EN,
             "Det.ocr_version": OCRVersion.PPOCRV4,
             "Rec.lang_type": LangRec.CH,
+            # "Rec.device": "cuda",
+            # "EngineConfig.onnxruntime.use_cuda": True,
         },
         'c4': {
             "Det.lang_type": LangDet.MULTI,
             "Det.ocr_version": OCRVersion.PPOCRV4,
             "Rec.lang_type": LangRec.CH,
+            # "Rec.device": "cuda",
+            # "EngineConfig.onnxruntime.use_cuda": True,
         },
         'c5': {
             "Det.lang_type": LangDet.CH,
@@ -98,6 +114,8 @@ def ppocr_demo():
             "Det.ocr_version": OCRVersion.PPOCRV5,
             "Det.model_type": ModelType.SERVER,
             "Rec.lang_type": LangRec.CH,
+            # "Rec.device": "cuda",
+            # "EngineConfig.onnxruntime.use_cuda": True,
         },
     }
 

@@ -38,6 +38,16 @@ Current token-prediction-based model architectures are highly sensitive to the a
 pip install phocr
 ```
 
+### GPU Support (Optional)
+
+If you want to use GPU acceleration with ONNX Runtime, you need to install cuDNN:
+
+```bash
+conda install -c nvidia cudnn=9
+```
+
+**Note**: Without this dependency, you may encounter errors when using ONNX Runtime with GPU support.
+
 ## Quick Start
 
 ```python
