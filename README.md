@@ -35,18 +35,22 @@ Current token-prediction-based model architectures are highly sensitive to the a
 ## Installation
 
 ```bash
+# Choose **one** installation method below:
+
+# Method 1: Install with ONNX Runtime CPU version
+pip install phocr[cpu]
+
+# Method 2: Install with ONNX Runtime GPU version
+pip install phocr[cuda]
+# Required: Make sure the CUDA toolkit and cuDNN library are properly installed
+# You can install cuda Runtime and cuDNN via conda:
+conda install -c nvidia cuda-runtime=12.1 cudnn=9 
+# Or manually install the corresponding CUDA toolkit and cuDNN libraries
+
+# Method 3: Manually manage ONNX Runtime
+# You can install `onnxruntime` or `onnxruntime-gpu` yourself, then install PHOCR
 pip install phocr
 ```
-
-### GPU Support (Optional)
-
-If you want to use GPU acceleration with ONNX Runtime, you need to install cuDNN:
-
-```bash
-conda install -c nvidia cudnn=9
-```
-
-**Note**: Without this dependency, you may encounter errors when using ONNX Runtime with GPU support.
 
 ## Quick Start
 

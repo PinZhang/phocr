@@ -4,10 +4,6 @@ from setuptools import find_packages, setup
 import shutil
 
 
-def has_nvidia_gpu():
-    return shutil.which("nvidia-smi") is not None
-
-
 def read_readme():
     readme_path = os.path.join(os.path.dirname(__file__), "README.md")
     with open(readme_path, "r", encoding="utf-8") as fh:
@@ -19,10 +15,6 @@ def read_requirements():
     with open(req_path, "r", encoding="utf-8") as fh:
         deps = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
-    if has_nvidia_gpu():
-        deps.append("onnxruntime-gpu>=1.17.0")
-    else:
-        deps.append("onnxruntime>=1.17.0")
     return deps
 
 
@@ -77,6 +69,12 @@ setup(
             "black>=21.0",
             "flake8>=3.8",
             "mypy>=0.800",
+        ],
+        "cpu": [
+            "onnxruntime>=1.17.0",
+        ],
+        "cuda": [
+            "onnxruntime-gpu>=1.17.0",
         ],
     },
     entry_points={

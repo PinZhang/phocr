@@ -36,18 +36,22 @@ PHOCR 是一个高性能的开源光学字符识别（OCR）工具包，专为�
 ## 安装方式
 
 ```bash
+# 请选择以下 **一种** 安装方式：
+
+# 方法一：安装带 ONNX Runtime CPU 版本
+pip install phocr[cpu]
+
+# 方法二：安装带 ONNX Runtime GPU 版本
+pip install phocr[cuda]
+# 必须：确保已正确安装 CUDA Toolkit 和 cuDNN 库
+# 你可以通过 conda 安装 cuda-runtime和cuDNN：
+conda install -c nvidia cuda-runtime=12.1 cudnn=9
+# 或者手动安装对应版本的 CUDA Toolkit 和 cuDNN 库
+
+# 方法三：手动管理 ONNX Runtime
+# 你可以自行安装 `onnxruntime` 或 `onnxruntime-gpu`，然后再安装 PHOCR
 pip install phocr
 ```
-
-### GPU 支持（可选）
-
-如果您想要使用 ONNX Runtime 的 GPU 加速功能，需要安装 cuDNN：
-
-```bash
-conda install -c nvidia cudnn=9
-```
-
-**注意**：如果没有此依赖项，在使用 ONNX Runtime GPU 支持时可能会遇到错误。
 
 ## 快速开始
 
