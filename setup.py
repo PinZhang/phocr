@@ -71,10 +71,10 @@ setup(
             "mypy>=0.800",
         ],
         "cpu": [
-            "onnxruntime>=1.17.0",
+            "onnxruntime>=1.20.0",
         ],
         "cuda": [
-            "onnxruntime-gpu>=1.17.0",
+            "onnxruntime-gpu>=1.20.0",
         ],
     },
     entry_points={
