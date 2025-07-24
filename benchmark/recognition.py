@@ -73,11 +73,10 @@ def evaluate_recognition(dataset, args):
         scene_cer, _ = calculate_cer(data['predictions'], data['labels'], True)
         scene_cers[scene] = {'cer': scene_cer, 'count': len(data['predictions'])}
 
-    # 检测操作系统
     lang = args.language
     if lang == 'ch':
         lang = 'zh_en'
-    with open(f'benchmark/model_predictions/dataset_{lang}_test_v1_PHOCR_x86.jsonl', 'w') as f:
+    with open(f'benchmark/model_predictions/dataset_{lang}_test_v1_PHOCR.jsonl', 'w') as f:
         for result in save_results:
             f.write(json.dumps(result, ensure_ascii=False) + '\n')
 
