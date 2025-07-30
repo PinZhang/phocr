@@ -35,7 +35,7 @@ class PHOCROutput:
     def to_markdown(self) -> str:
         return ToMarkdown.to(self.boxes, self.txts)
 
-    def vis(self, save_path: Optional[str] = None, font_path: Optional[str] = None):
+    def vis(self, save_path: Optional[str] = None, font_path: Optional[str] = None, text_only=False):
         if self.img is None or self.boxes is None:
             logger.warning("No image or boxes to visualize.")
             return
@@ -48,6 +48,7 @@ class PHOCROutput:
             self.scores,
             font_path=font_path,
             lang_type=self.lang_type,
+            text_only=text_only,
         )
 
         if save_path is not None:

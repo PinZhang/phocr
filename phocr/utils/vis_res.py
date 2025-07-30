@@ -42,9 +42,13 @@ class VisRes:
         scores: Optional[Tuple[float]] = None,
         font_path: Optional[str] = None,
         lang_type: Optional[LangRec] = None,
+        text_only: bool = False,
     ) -> np.ndarray:
         if txts is None:
             return self.draw_dt_boxes(img_content, dt_boxes, scores)
+
+        if text_only:
+            return self.draw_text_only(img_content, dt_boxes, txts, font_path, scores, lang_type)
 
         font_path = self.get_font_path(font_path, lang_type)
         return self.draw_ocr_box_txt(img_content, dt_boxes, txts, font_path, scores)
@@ -122,6 +126,71 @@ class VisRes:
             return str(save_font_path)
 
         return str(font_path)
+
+    def draw_text_only(
+        self,
+        img_content: InputType,
+        dt_boxes: np.ndarray,
+        txts: Union[List[str], Tuple[str]],
+        font_path: Optional[str] = None,
+        scores: Optional[Tuple[float]] = None,
+        lang_type: Optional[LangRec] = None,
+    ) -> np.ndarray:
+        """
+        只生成识别后的文字可视化版本（只保留右侧部分）
+        
+        Args:
+            img_content: 输入图片
+            dt_boxes: 检测框坐标
+            txts: 识别的文字列表
+            font_path: 字体路径
+            scores: 置信度分数
+            lang_type: 语言类型
+            
+        Returns:
+            只包含识别文字的白色背景图片
+        """
+        image = Image.fromarray(self.load_img(img_content))
+        h, w = image.height, image.width
+        
+        # 创建白色背景的图片
+        img_right = Image.new("RGB", (w, h), (255, 255, 255))
+        
+        # 获取字体路径
+        font_path = self.get_font_path(font_path, lang_type)
+        
+        random.seed(0)
+        draw_right = ImageDraw.Draw(img_right)
+        
+        for idx, (box, txt) in enumerate(zip(dt_boxes, txts)):
+            if scores is not None and float(scores[idx]) < self.text_score:
+                continue
+
+            color = self.get_random_color()
+
+            # 绘制检测框轮廓
+            box_list = np.array(box).reshape(8).tolist()
+            # draw_right.polygon(box_list, outline=color)
+
+            # 绘制识别文字
+            box_height = self.get_box_height(box)
+            box_width = self.get_box_width(box)
+            if box_height > 2 * box_width:
+                # 垂直文字（如日文、韩文等）
+                font_size = max(int(box_width * 0.6), 10)
+                font = ImageFont.truetype(font_path, font_size, encoding="utf-8")
+                cur_y = box[0][1]
+
+                for c in txt:
+                    draw_right.text((box[0][0] + 3, cur_y), c, fill=(0, 0, 0), font=font)
+                    cur_y += self.get_char_size(font, c)
+            else:
+                # 水平文字
+                font_size = max(int(box_height * 0.6), 10)
+                font = ImageFont.truetype(font_path, font_size, encoding="utf-8")
+                draw_right.text([box[0][0], box[0][1]], txt, fill=(0, 0, 0), font=font)
+
+        return np.array(img_right)
 
     def draw_rec_res(
         self,
