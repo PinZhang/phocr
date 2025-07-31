@@ -190,7 +190,7 @@ class VisRes:
                 font = ImageFont.truetype(font_path, font_size, encoding="utf-8")
                 draw_right.text([box[0][0], box[0][1]], txt, fill=(0, 0, 0), font=font)
 
-        return np.array(img_right)
+        return img_right
 
     def draw_rec_res(
         self,
